@@ -1,1 +1,7 @@
+$ cd my-first-blog
+$ virtualenv --python=python3.5 myvenv
+$ source myvenv/bin/activate
+(myvenv) $ pip install django==1.10.0
+
+
 C:\Users\Administrator\Desktop\laser-eyes-main\path\to\venv\Scripts\activate.bat

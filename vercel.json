@@ -1,0 +1,14 @@
+{
+    "builds": [
+      {
+        "src": "laser_eyes/wsgi.py",
+        "use": "@vercel/python"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "laser_eyes/wsgi.py"
+      }
+    ]
+}
