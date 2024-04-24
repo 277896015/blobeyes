@@ -1,0 +1,83 @@
+{% load static %}
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.24.0/dist/full.css" rel="stylesheet" type="text/css" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
+
+  <title>Laser Eyes</title>
+</head>
+<body>
+    <header>
+        <div class="navbar bg-primary text-primary-content">
+            <a class="btn btn-ghost normal-case text-xl">Laser Eyes</a>
+        </div>
+    </header>
+
+    <div class="container py-10 mx-auto">
+        <div class="flex flex-wrap space-x-10">
+            <div class="flex-auto w-32 space-y-10">
+                <!-- Image Upload Card -->
+                <div class="card card-bordered border-gray-600 border-2">
+                    <div class="card-body">
+                        <h2 class="card-title">Upload an Image</h2>
+                        <p>Insert an image containing human eyes and turn them into laser eyes.</p>
+                        <i class="text-gray-500">
+                            <p id="selected-file-text"></p>
+                        </i>
+                        <div class="card-actions justify-center pt-4">
+                            <input id="fileInput" type="file" style="display:none;" />
+                            <button id="upload-btn" class="btn btn-primary gap-2" type="input" onclick="openFileExplorer()">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 15v4c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2v-4M17 8l-5-5-5 5M12 4.2v10.3"/></svg>
+                                Upload
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Settings Card -->
+                <div class="card card-bordered border-gray-600 border-2">
+                    <div class="card-body ">
+                        <h2 class="card-title">Settings</h2>
+    
+                        <div class="mt-2">
+                            <h3 class="pb-4">Laser Scale</h3>
+                            <input id="laserScaleInput" type="range" min="100" max="400" value="100" class="range range-accent" />
+                        </div>
+    
+                        <div class="card-actions justify-center pt-4">
+                            <button id="update-btn" class="btn btn-secondary gap-2 btn-disabled" type="input" onclick="updateImage()">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <path d="M2.5 2v6h6M21.5 22v-6h-6"/><path d="M22 11.5A10 10 0 0 0 3.2 7.2M2 12.5a10 10 0 0 0 18.8 4.2"/></svg>
+                                Update
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-auto w-64">
+                <div class="card card-bordered border-gray-600 border-2">
+                    <div class="card-body">
+                        <div class="card-actions items-center justify-between">
+                            <h2 class="card-title">Output</h2>
+                            <button id="download-btn" class="btn btn-secondary gap-2 btn-disabled" onclick="downloadImage()">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 15v4c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2v-4M17 9l-5 5-5-5M12 12.8V2.5"/></svg>
+                                Download
+                            </button>
+                        </div>
+                    </div>
+                    <figure>
+                        <img id="output-canvas" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="/>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'js/index.js' %}"></script>
+</body>
+</html>
