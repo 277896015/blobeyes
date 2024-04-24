@@ -1,6 +1,9 @@
-# Laser Eyes
 
-Add lasers to your eyes ⦂)
+# BlobEyes  fork by  https://github.com/angusho1/laser-eyes.
+
+
+
+Add BlobEyes to your eyes ⦂)
 
 Written in Python & Django
 

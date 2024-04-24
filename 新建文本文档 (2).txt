@@ -1,0 +1,6 @@
+
+git add .
+git commit -m "commit1"
+git branch -M main
+git remote add origin git@github.com:277896015/blobeyes.git
+git push -u origin main
